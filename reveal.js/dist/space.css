@@ -20,7 +20,7 @@ li{
 #provaleft{
   position: absolute;
   top: 390px;
-  right: 650px;
+  right: 550px;
   width: 500px;
   line-height: 40px;
 }
@@ -28,7 +28,7 @@ li{
 #provaright{
   position: absolute;
   top: 390px;
-  left: 650px;
+  left: 550px;
   width: 500px;
   line-height: 40px;
 }
