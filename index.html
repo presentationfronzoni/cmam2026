@@ -38,9 +38,9 @@
 
                 <!--################################ -->
 				<section>
-					<h1 style="font-size:50px; color:black"> Finite Elements with weighted bases   </h1>
-					<h1 style="font-size:50px; color:black"> for the fractional Laplacian </h1>
-					<h1 style="font-size:50px; color:black"> </h1>
+					<h2 style="font-size:50px; color:black"> Finite Elements with weighted bases   </h2>
+					<h2 style="font-size:50px; color:black"> for the fractional Laplacian </h2>
+					
 
 					<!-- LEFT image (loaded from same folder as this HTML file) -->
 					<div id ="provaleft" style="flex: 0 0 200px;">
@@ -65,6 +65,22 @@
 
 				
                 </section>
+
+
+				<section>
+					<div id ="provacup" style="font-size:25px;">
+						joint work with Félix del Teso <br> and David Gómez Castro <br>
+						<div id ="provaleft_c"  style="flex: 0 0 200px;">
+						<img src="david.jpg" alt="" style="width:250px; height:250px; object-fit:cover; border-radius:8px;">
+						</div> 
+						<div id ="provaright_c"  style="flex: 0 0 200px;">
+						<img src="felix.jpeg" alt="" style="width:250px; height:250px; object-fit:cover; border-radius:8px;">
+						</div>
+					
+					</div>
+
+                    </ul>
+				</section>
                 <!--########################################################## -->
 				<section>
 					<h3 style="font-size:70px"> Presentation plan </h3>
@@ -73,7 +89,7 @@
 					<li style="font-size:30px;"> The fractional Dirichlet problem </li>
 					<li style="font-size:30px;"> Finite Elements with a weighted basis </li>
 					<li style="font-size:30px;"> Variational Crimes  </li>
-					<li style="font-size:30px;"> Numerical experiment </li>
+
                     </ul>
 				</section>
                 <!--######################################################## -->
@@ -158,6 +174,96 @@
 					</section>
 
 					<section data-background-color="white">
+						<p style ="font-size:30px">  <b>  <em> Generic regularity of the solution to the fractional Dirichlet problem</em>  </b> </p> 
+						
+						<div class = "fragment"> 
+							
+							
+						<p align="left" style ="font-size:20px; margin-left:5px"> <br> <font color="Sienna"> <span style="font-size:1.8em; vertical-align:middle;">&#9758;</span> Ros-Oton, Serra (2014) </font>  </p>
+						<div id ="upperright1"  style="flex: 0 0 200px;">
+						<img src="rosoton.jpg" alt="" style="width:150px; height:150px; object-fit:cover; border-radius:8px;">
+						</div>
+						<div id ="upperright2"  style="flex: 0 0 200px;">
+						<img src="serra.jpg" alt="" style="width:150px; height:150px; object-fit:cover; border-radius:8px;">
+						</div> 
+						<p align="left" style ="font-size:25px; margin-left:5px; margin-top:180px">
+							
+						\[ |u(x)| \le C \|f\|_{L^\infty(\Omega)} \, d_\Omega(x)^s , \qquad \forall f \in L^\infty (\Omega) \]
+						\[ f \in C^\alpha(\overline{\Omega}) \Longrightarrow  u / d_\Omega^s \in C^{\alpha + s}(\overline{\Omega}), \]
+						where $d_\Omega(x) = \text{dist}(x, \R^d\setminus \Omega)$. Roughly speaking the solution $u$ behaves like $d_\Omega^s$ near the boundary of $\Omega$.
+						</p>
+						</div>
+						
+					</section>
+
+					
+
+			<section data-background-color="white">
+					<div  style="background-color:rgb(194, 37, 58); padding: 1px;">
+							<div  style="background-color:white; margin-left:10px; padding: 1px;">
+
+								<p align="left" style ="font-size:20px; margin-left:5px">
+								 \[  \text{Find } \quad u \in V \quad \text{ such that } \quad
+    a(u, v) = \int_{\Omega} f(x) v(x) \textrm{d}x \quad \quad \forall v \in V. \]
+
+								</p>
+								
+							</div>
+						</div>
+				<p style ="font-size:25px" align="left">  A classical approach for a FEM approximation considers a finite dimensional space $V_h \subset V$ and solves
+
+					<div  style="background-color:rgb(204, 77, 183); padding: 1px;">
+							<div  style="background-color:white; margin-left:10px; padding: 1px;">
+								<p align="left" style ="font-size:20px; margin-left:5px">
+					\[ \textrm{Find} \quad {u}_h \in V_h \quad \textrm{such that} \quad a({u}_h, v_h) = \int_{\Omega} f(x) v(x) \textrm{d}x  \quad \quad \forall v_h \in V_h \]
+										</p>
+								
+							</div>
+						</div>
+					
+				</p>
+
+			
+
+				</section>
+
+					
+
+
+
+
+
+					<section data-background-color="white"> 
+						<p>
+						<div style="background-color:rgb(193, 40, 190); padding: 1px;">
+							<div  style="background-color:white ;margin-left:10px; padding: 1px;">
+								<p align="left" style ="font-size:25px; margin-left:5px"> <b> A short review of FEM convergence order </b> </p>
+								<p align="left" style ="font-size:20px; margin-left:5px"> <br> <font color="Sienna"> <span style="font-size:1.8em; vertical-align:middle;">&#9758;</span> Acosta, Borthagaray (2017) </font> classical piecewise linear FEM
+								\[ \| u  - u_h \|_{H^s (\mathbb{R}^d)} \le
+									\begin{cases}
+										C\, h^{1/2} \lvert\log h\rvert\, \| f \|_{C^{\frac{1}{2} -s} (\overline{\Omega})}, & \text{if } s \in (0,1/2),                        \\[4pt]
+										C\, h^{1/2} \lvert\log h\rvert\, \| f \|_{L^\infty(\Omega)},                       & \text{if } s = 1/2,                              \\[4pt]
+										C\, h^{1/2} \lvert\log h\rvert^{1/2}\, \| f \|_{C^\beta(\overline{\Omega})},       & \text{if } s \in (1/2,1) \text{ and } \beta > 0.
+									\end{cases} \]
+									 </p>
+									 <p align="left" style ="font-size:20px; margin-left:5px">  <font color="Sienna"> <span style="font-size:1.8em; vertical-align:middle;">&#9758;</span> Bonito, Lei, Pasciak (2019) </font> 
+										improved order of convergence	$h^{\kappa - s} \lvert\log h\rvert $ for $\kappa \in (s, 3/2)$ under the assumption that the solution $u$ possesses <u> higher regularity at boundary</u> (e.g. $u_(x) = (1-|x|^2)_+$ on $\Omega=B_1(0)$)
+										 </p>
+										  <p align="left" style ="font-size:20px; margin-left:5px">  <font color="Sienna"> <span style="font-size:1.8em; vertical-align:middle;">&#9758;</span> Faustmann, Karkulik, Melenk (2022) </font> <em> local interior </em> error estimates of order up to $h^{2-s}$
+
+										 </p>
+										  <p align="left" style ="font-size:20px; margin-left:5px"> <font color="Sienna"> <span style="font-size:1.8em; vertical-align:middle;">&#9758;</span> Faustmann, Marcati, Melenk, Schwab (2022) </font> $hp$-FEM exponential convergence \[\| u  - u_N \|_{H^s (\mathbb{R}^d)} \leq C \exp\left(-b\sqrt[4]{N}\right).\]
+										 </p>
+								<p align="left" style ="font-size:25px; margin-left:5px">
+								</p>
+							</div>
+						</div>
+						</p>
+						
+					</section>
+					<!--################### -->
+
+					<section data-background-color="white">
 						<p style ="font-size:30px"> <em>  </em>  </p> 
 						<p>
 						<div style="background-color:rgb(79, 72, 185); padding: 1px;">
@@ -189,28 +295,7 @@
 						</p>
 					</section>
 
-
-					<section data-background-color="white">
-						<p style ="font-size:30px">  <b>  <em> Generic regularity of the solution to the fractional Dirichlet problem</em>  </b> </p> 
-						
-						<div class = "fragment"> 
-							
-							
-						<p align="left" style ="font-size:20px; margin-left:5px"> <br> <font color="Sienna"> <span style="font-size:1.8em; vertical-align:middle;">&#9758;</span> Ros-Oton, Serra (2014) </font>  </p>
-						<div id ="upperright1"  style="flex: 0 0 200px;">
-						<img src="rosoton.jpg" alt="" style="width:150px; height:150px; object-fit:cover; border-radius:8px;">
-						</div>
-						<div id ="upperright2"  style="flex: 0 0 200px;">
-						<img src="serra.jpg" alt="" style="width:150px; height:150px; object-fit:cover; border-radius:8px;">
-						</div> 
-						<p align="left" style ="font-size:25px; margin-left:5px; margin-top:180px">
-							
-						\[ |u(x)| \le C \|f\|_{L^\infty(\Omega)} \, d_\Omega(x)^s , \qquad \forall f \in L^\infty (\Omega) \]
-						\[ f \in C^\alpha(\overline{\Omega}) \Longrightarrow  u / d_\Omega^s \in C^{\alpha + s}(\overline{\Omega}) \]
-						</p>
-						</div>
-						
-					</section>
+					<!--################### -->
 
 					<section data-background-color="white">
 						<p style ="font-size:30px"> <b> <em> Generic regularity of the solution to the fractional Dirichlet problem</em> </b> </p> 
@@ -235,42 +320,6 @@
 						</div>
 						
 					</section>
-
-					
-
-
-
-
-
-					<section data-background-color="white"> 
-						<p>
-						<div style="background-color:rgb(193, 40, 190); padding: 1px;">
-							<div  style="background-color:white ;margin-left:10px; padding: 1px;">
-								<p align="left" style ="font-size:25px; margin-left:5px"> <b> A short review of FEM convergence order </b> </p>
-								<p align="left" style ="font-size:20px; margin-left:5px"> <br> <font color="Sienna"> <span style="font-size:1.8em; vertical-align:middle;">&#9758;</span> Acosta, Borthagaray (2017) </font> 
-								\[ \| u  - u_h \|_{H^s (\mathbb{R}^d)} \le
-									\begin{cases}
-										C\, h^{1/2} \lvert\log h\rvert\, \| f \|_{C^{\frac{1}{2} -s} (\overline{\Omega})}, & \text{if } s \in (0,1/2),                        \\[4pt]
-										C\, h^{1/2} \lvert\log h\rvert\, \| f \|_{L^\infty(\Omega)},                       & \text{if } s = 1/2,                              \\[4pt]
-										C\, h^{1/2} \lvert\log h\rvert^{1/2}\, \| f \|_{C^\beta(\overline{\Omega})},       & \text{if } s \in (1/2,1) \text{ and } \beta > 0.
-									\end{cases} \]
-									 </p>
-									 <p align="left" style ="font-size:20px; margin-left:5px">  <font color="Sienna"> <span style="font-size:1.8em; vertical-align:middle;">&#9758;</span> Bonito, Lei, Pasciak (2019) </font> 
-										improved order of convergence	$h^{\kappa - s} \lvert\log h\rvert $ for $\kappa \in (s, 3/2)$ under the assumption that the solution $u$ possesses <u> higher regularity at boundary</u> (e.g. $u_(x) = (1-|x|^2)_+$ on $\Omega=B_1(0)$)
-										 </p>
-										  <p align="left" style ="font-size:20px; margin-left:5px">  <font color="Sienna"> <span style="font-size:1.8em; vertical-align:middle;">&#9758;</span> Faustmann, Karkulik, Melenk (2022) </font> <em> local interior </em> error estimates of order up to $h^{2-s}$
-
-										 </p>
-										  <p align="left" style ="font-size:20px; margin-left:5px"> <font color="Sienna"> <span style="font-size:1.8em; vertical-align:middle;">&#9758;</span> Faustmann, Marcati, Melenk, Schwab (2022) </font> exponential convergence \[\| u  - u_N \|_{H^s (\mathbb{R}^d)} \leq C \exp\left(-b\sqrt[4]{N}\right).\]
-										 </p>
-								<p align="left" style ="font-size:25px; margin-left:5px">
-								</p>
-							</div>
-						</div>
-						</p>
-						
-					</section>
-					<!--################### -->
 					
 
                 </section>
@@ -278,7 +327,7 @@
 				<!--####################################################### -->
 				<section>
 				<section>
-					<h3> Finite Elements with a weighted basis </h3>
+					<h3> Finite Elements with a <br> weighted basis </h3>
                     <hr style="width:80%; height:1px; ;color:black;background-color:black">
 				</section>
 				<!--################### -->
@@ -300,14 +349,37 @@
 							\[ \text{PL}(\mathcal{T}_h)
 						\coloneqq
 						\{ u \in C(\overline \Omega_h) :
-						u|_K \text{ is linear for all } K \in \mathcal{T}_h\}, \]
+						u|_K \text{ is linear for all } K \in \mathcal{T}_h\}. \]
 						 </b> 
 					
-					We then consider the finite dimensional space
-						\[ V_h \coloneqq \{v : \R^d \to \mathbb R \text{ such that } v |_\Omega \in \delta^s \textrm{PL}{\mathcal{T}_h} \text{ and } v = 0 \text{ in } \R^d \setminus \Omega\}.  \]
+					For $V_h$ we then consider the finite dimensional space
+						\[ V_h \coloneqq \{v : \R^d \to \mathbb R \text{ such that } v |_\Omega \in \delta^s \textrm{PL}(\mathcal{T}_h) \text{ and } v = 0 \text{ in } \R^d \setminus \Omega\}.  \]
 					
 				</p>
 				</section>
+
+				<section data-background-color="white">
+				<p style ="font-size:30px"> <b> <font color ="fuchsia"> Finite Elements with a weighted basis </font> </b>  </p>
+				<p style ="font-size:25px" align="left">  	The standard approximation space is $V_h^{\text{FEM}} \coloneqq \textrm{PL}(\mathcal{T}_h)) \cap W_0^{1,\infty}(\Omega)$.
+						The canonical basis of this space is a nodal basis $\{\varphi_i : x_i \in \Omega\}$.
+					</p>
+					<p style ="font-size:25px" align="left">
+					For exmaple $\Omega = (-1,1)$, and consider $h > 0$.
+						We denote the points $x_i = -1 + (i-1)h$ for $i = 1, \cdots, N_h$
+					We can write the basis for standard FEM for the Dirichlet problem as
+					\[
+						V_h^{\textup{FEM}} = \textrm{span} \{\varphi_2, \cdots, \varphi_{N_h-1}\}.
+					\]
+					The WFEM approximation space is
+					\[
+						V_h = \textrm{span} \{\delta^s \varphi_1, \cdots, \delta^s \varphi_{N_h}\}.
+					\]
+				
+			
+					
+				</p>
+				</section>
+			
 
 				
 
@@ -347,19 +419,7 @@
 				</section>
 
 
-				<section data-background-color="white">
-					<p style ="font-size:30px"> <b> <font color ="fuchsia"> Finite Elements with a weighted basis </font> </b> </p>
-					<p style ="font-size:30px">  </p>
-					<div  style="font-size:21px; padding: 0px">
-						<figcaption style="font-size:1.0em; margin-top:0.5em; text-align:center;">
-					FEM vs. WFEM basis functions on \(\Omega=(-1,1)\) for \(s=0.1\) and \(h=0.25\)
-				</figcaption>
-								<figure style="width:70%; margin:0 auto; text-align:center;">
-						<img src="Interpolation_s0.1_h0.125-1.png" alt="" style="width:100%;">
-
-				</figure>
-					</div>
-				</section>
+				
 
 				<!--################### -->
 				<section data-background-color="white">
@@ -391,16 +451,31 @@
 					<div style="background-color:rgb(178, 40, 193); padding: 1px;">
 						<div  style="background-color:white ;margin-left:10px; padding: 1px;">
 							<p align="left" style ="font-size:25px; margin-left:5px"> <b> Idea of the proof </b> </p>
-							<p align="left" style ="font-size:25px; margin-left:5px"> Cea's lemma and order of approximation of a suitable "competitor" $J_h u$, where 
+							<p align="left" style ="font-size:25px; margin-left:5px"> <u> Cea's lemma </u> and order of approximation of a <u> suitable "competitor"</u> $J_h u$ , where 
 								\[ J_h v = \delta^s E_\alpha r_\Omega I_h E_\mu \frac{v}{\delta^s}, \]
-								and $E_\mu$ is an extension operator
+								 $E_\mu$ is an extension operator
 								\[ \begin{aligned}
          & E_\mu: W^{\mu,\infty}(\overline{\Omega}) \to W^{\mu,\infty}(\R^d), \quad E_\mu u = u \ \text{in } \Omega, \quad \textup{supp}\{E_\mu u\} \subset B_R, \end{aligned}  \]
-		 and $I_h : C(\R^d) \to \textrm{PL}(\mathcal{T}_h)\subset W^{1,\infty}({\Omega}_h)$ be the piece-wise linear interpolation obtained by sampling on the vertices of the triangles in $\mathcal{T}_h$.
+		 $r_\Omega$ is a restriction operator, such that $r_\Omega v = v|_{\Omega}$ and $I_h : C(\R^d) \to \textrm{PL}(\mathcal{T}_h)\subset W^{1,\infty}({\Omega}_h)$ be the piece-wise linear interpolation obtained by sampling on the vertices of the triangles in $\mathcal{T}_h$.
 							</p>
 						</div>
 					</div> 
 					</p>
+				</section>
+
+
+				<section data-background-color="white">
+					<p style ="font-size:30px"> <b> <font color ="fuchsia"> Finite Elements with a weighted basis </font> </b> </p>
+					<p style ="font-size:30px">  </p>
+					<div  style="font-size:21px; padding: 0px">
+						<figcaption style="font-size:1.0em; margin-top:0.5em; text-align:center;">
+					FEM vs. WFEM basis functions on \(\Omega=(-1,1)\), $f=1$, for \(s=0.1\) and \(h=0.25\)
+				</figcaption>
+								<figure style="width:70%; margin:0 auto; text-align:center;">
+						<img src="Interpolation_s0.1_h0.125-1.png" alt="" style="width:100%;">
+
+				</figure>
+					</div>
 				</section>
 
 				<!--################### -->
@@ -514,7 +589,7 @@
 
 				<section data-background-color="white">
 					<p style ="font-size:30px"> <b> <font color ="DeepSkyBlue"> Variational Crimes  </font> </b>  </p>
-					<hr style="width:100%; height:0.5px; ;color:gray;background-color:gray">
+					
 					<p style ="font-size:25px" align="left"> <em> ``We want [...] to find out which violations of
 the rules still yield a convergent approximation. In other
 words we want to find out whether or not crime pays;
@@ -539,7 +614,7 @@ fortunately for the finite element method, it often does.'' </em>
 
 				<section data-background-color="white">
 					<p style ="font-size:30px"> <b> <font color ="DeepSkyBlue"> Variational Crimes  </font> </b>  </p>
-					<hr style="width:100%; height:0.5px; ;color:gray;background-color:gray">
+					
 					<p style ="font-size:25px" align="left">
 				
 						<div style="background-color:rgb(235, 142, 36); padding: 1px;">
@@ -553,7 +628,8 @@ fortunately for the finite element method, it often does.'' </em>
 							(\phi(x_k) - \phi(x_\ell))(\psi(x_k) - \psi(x_\ell))
 						}{
 							|x_k - x_\ell|^{d+2s}
-						} \rho^{2d}  \]
+						} \rho^{2d},  \]
+						where we denote the cube $Q_{R} \coloneqq [-R,R]^d$.
 						</p>
 							</div>
 						</div>
@@ -564,7 +640,7 @@ fortunately for the finite element method, it often does.'' </em>
 
 				<section data-background-color="white">
 					<p style ="font-size:30px"> <b> <font color ="DeepSkyBlue"> Variational Crimes  </font> </b>  </p>
-					<hr style="width:100%; height:0.5px; ;color:gray;background-color:gray">
+				
 					<p style ="font-size:25px" align="left">
 				
 						<div style="background-color:rgb(235, 142, 36); padding: 1px;">
@@ -646,6 +722,40 @@ fortunately for the finite element method, it often does.'' </em>
 				</section>
 
 					<!--################### -->
+
+
+					<section data-background-color="white">
+						<p style ="font-size:30px"> <b> <font color ="DeepSkyBlue"> Variational Crimes  </font> </b>  </p>
+						<p style ="font-size:25px" align="left">
+				
+						<div style="background-color:rgb(235, 142, 36); padding: 1px;">
+							<div  style="background-color:white;margin-left:10px; padding: 1px;">
+								<p align="left" style ="font-size:20px; margin-left:5px">
+									<font color ="Crimson"> Problem</font>: how to compute <u> efficiently </u>
+					\[ a_\rho( \phi, \psi) \coloneqq \frac{C_{d,s}}{2} \sum_{\substack{ x_{k}, x_\ell \in Q_{R_\rho}  \\ |x_k - x_\ell|_\infty \ge \varepsilon_\rho }}
+						\frac{
+							(\phi(x_k) - \phi(x_\ell))(\psi(x_k) - \psi(x_\ell))
+						}{
+							|x_k - x_\ell|^{d+2s}
+						} \rho^{2d}   \]
+						</p>
+							</div>
+						</div>
+					</p>
+					<p class="fragment"  align="left" style ="font-size:22.5px; margin-left:5px"> Let us first denote 
+						\[
+						K_\rho(|x|) = \frac{C_{d,s}}{2}
+						\begin{dcases}
+							|x|^{-d-2s} & \text{if } |x|_\infty \ge \varepsilon_\rho \\
+							0           & \text{otherwise}.
+						\end{dcases}
+						\] </p>
+						<div  style="font-size:22.5px; padding: 0px"> 
+	
+
+						</div>
+
+				</section>
 				
 				<section data-background-color="white">
 						<p style ="font-size:30px"> <b> <font color ="DeepSkyBlue"> Variational Crimes  </font> </b>  </p>
@@ -654,7 +764,7 @@ fortunately for the finite element method, it often does.'' </em>
 						<div style="background-color:rgb(235, 142, 36); padding: 1px;">
 							<div  style="background-color:white;margin-left:10px; padding: 1px;">
 								<p align="left" style ="font-size:20px; margin-left:5px">
-									How to compute <u> efficiently </u>
+									<font color ="Crimson"> Problem</font>: how to compute <u> efficiently </u>
 					\[ a_\rho( \phi, \psi) \coloneqq \frac{C_{d,s}}{2} \sum_{\substack{ x_{k}, x_\ell \in Q_{R_\rho}  \\ |x_k - x_\ell|_\infty \ge \varepsilon_\rho }}
 						\frac{
 							(\phi(x_k) - \phi(x_\ell))(\psi(x_k) - \psi(x_\ell))
@@ -678,13 +788,44 @@ fortunately for the finite element method, it often does.'' </em>
 
 				</section>
 
+
+				<section data-background-color="white">
+						<p style ="font-size:30px"> <b> <font color ="DeepSkyBlue"> Variational Crimes  </font> </b>  </p>
+						<p style ="font-size:25px" align="left">
+				
+						<div style="background-color:rgb(235, 142, 36); padding: 1px;">
+							<div  style="background-color:white;margin-left:10px; padding: 1px;">
+								<p align="left" style ="font-size:20px; margin-left:5px">
+									<font color ="Crimson"> Problem</font>: how to compute <u> efficiently </u>
+					\[ a_\rho( \phi, \psi) \coloneqq \frac{C_{d,s}}{2} \sum_{\substack{ x_{k}, x_\ell \in Q_{R_\rho}  \\ |x_k - x_\ell|_\infty \ge \varepsilon_\rho }}
+						\frac{
+							(\phi(x_k) - \phi(x_\ell))(\psi(x_k) - \psi(x_\ell))
+						}{
+							|x_k - x_\ell|^{d+2s}
+						} \rho^{2d}   \]
+						</p>
+							</div>
+						</div>
+					</p>
+				
+						<div  style="font-size:22.5px; padding: 0px"> 
+							\[ \begin{align*}
+  a_\rho(\phi, \psi) &  =2\left( \color{red}\rho^d \sum_{l \in \mathbb Z^d} K_\rho(|x_l|) \color{black}  \right) \left( \color{teal} \underbrace{\rho^d \sum_{k\in \mathbb Z^d} \phi(x_k)\psi(x_k)}_{\phi \textrm{ and } \psi \textrm{ have small support}} \color{black} \right)
+  \\
+  & \quad -2 \rho^d \sum_{k \in \mathbb Z^d} \phi(x_k) \left( \color{teal} \underbrace{\rho^d \sum_{l\in \mathbb Z^d} \psi(x_l) K_\rho(|x_k - x_l|)}_{\text{convolution} \rightarrow \textrm{fast FFT}} \color{black} \right)
+\end{align*} \]
+						</div>
+<p align="left" style ="font-size:22.5px; margin-left:5px"> </p>
+				</section>
+
 				<!--################### -->
 				<section data-background-color="white">
 					<p style ="font-size:30px"> <b> <font color ="DeepSkyBlue"> Variational Crimes  </font> </b>  </p>
 
 					<p align="left" style ="font-size:22.5px; margin-left:5px"> The <font color ="OrangeRed">computational bottleneck </font> is the term 
 
-					 \[ C_K \coloneqq \rho^d \sum_{x_l \in \mathbb Z^d} K_\rho(|x_l|) \]
+					 \[ C_K \coloneqq \rho^d \sum_{x_l \in \mathbb Z^d} K_\rho(|x_l|), \]
+					 but the computation becomes easier and faster for $R_\rho = + \infty $
 					 </p>
 					<p>
 					<div style="background-color:rgb(228, 174, 39); padding: 1px;">
@@ -697,7 +838,6 @@ fortunately for the finite element method, it often does.'' </em>
 \[
   Z(d,\nu) = \sum_{k \in \mathbb Z^d \setminus \{0\}} |k|^{-\nu}, \qquad \text{ where } \nu > d.
 \]
-Notice that $Z(1,\nu) = 2 \zeta(\nu)$.
 							</p>
 						</div>
 					</div> 
@@ -724,7 +864,7 @@ Notice that $Z(1,\nu) = 2 \zeta(\nu)$.
 					</div> 
 					<div style="background-color:rgb(228, 174, 39); padding: 1px;">
 						<div  style="background-color:white ;margin-left:10px; padding: 1px;">
-							<p align="left" style ="font-size:22.5px; margin-left:5px"> there are sufficiently accurate numerical implementations for the Riemann zeta function and for the Epstein zeta fucntion we have wrapped a recent <code> C+ </code> package into <code> julia </code>, as  <code> EpsteinLib.jl </code>
+							<p align="left" style ="font-size:22.5px; margin-left:5px"> There are sufficiently accurate numerical implementations for the Riemann zeta function and for the Epstein zeta fucntion we have wrapped a recent <code> C+ </code> package into <code> julia </code>, as  <code> EpsteinLib.jl </code>
 
 							</p>
 						</div>
@@ -800,6 +940,23 @@ Notice that $Z(1,\nu) = 2 \zeta(\nu)$.
 
 				<section data-background-color="white">
 					<p style ="font-size:30px"> <b> <font color ="DeepSkyBlue"> Variational Crimes  </font> </b>  </p>
+					<p style ="font-size:30px">  </p>
+					<div  style="font-size:21px; padding: 0px">
+						<figcaption style="font-size:1.0em; margin-top:0.5em; text-align:center;">
+					FEM computational errors, $\Omega = B_1(0)$, $\rho= 2^{-7}, 2^{-8}, 2^{-9}$
+				</figcaption>
+								<figure style="width:60%; margin:0 auto; text-align:center;">
+						<img src="2d_f=1_ConvFEM_Hs_h_rho-1.png" alt="" style="width:100%;">
+
+				</figure>
+				<figcaption style="font-size:1.0em; margin-top:0.5em; text-align:center;">
+					$H^s(\mathbb{R}^2)$ seminorm,  dashed lines: $Ch^{2-s}$
+				</figcaption>
+					</div>
+				</section>
+
+				<section data-background-color="white">
+					<p style ="font-size:30px"> <b> <font color ="DeepSkyBlue"> Variational Crimes  </font> </b>  </p>
 					<div  style="font-size:21px; padding: 0px">
 					<figcaption style="font-size:1.0em; margin-top:0.5em; text-align:center;">
 					WFEM computational errors, $\Omega = B_1(0)$, $\Omega_h = (-1,1)^2$, $\rho= 2^{-10}, 2^{-11}, 2^{-12}$
@@ -853,6 +1010,9 @@ Notice that $Z(1,\nu) = 2 \zeta(\nu)$.
 						</p>
 						<div class = fragment style="width: 100%;">
 							<img data-src="Paper.png" width="80%"> </img>
+						</div>
+						<div class = fragment style="width: 100%;">
+							<img data-src="repo.png" width="80%"> </img>
 						</div>
 					</section>
 				</section>
