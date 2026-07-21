@@ -220,6 +220,18 @@
 								
 							</div>
 						</div>
+
+					<div  style="background-color:rgb(226, 131, 166); padding: 1px;">
+							<div  style="background-color:white; margin-left:10px; padding: 1px;">
+								<p align="left" style ="font-size:20px; margin-left:5px">
+					Let $N_h \coloneqq \textrm{dim}(V_h)$ and let us assume that $V_h$ has a basis, $\{ \phi_i \}_{i=1}^{N_h}$. We compute the solution of the linear system
+					\[
+						AU = B, \qquad A\in \mathbb{R}^{N_h \times N_h}, \quad A_{i,j} = a(\phi_j, \phi_i), \qquad B \in \mathbb{R}^{N_h}, \quad B_i = \int_\Omega f \phi_i \, \textrm{d}x,
+					\]
+										</p>
+								
+							</div>
+						</div>
 					
 				</p>
 
@@ -364,8 +376,8 @@
 						The canonical basis of this space is a nodal basis $\{\varphi_i : x_i \in \Omega\}$.
 					</p>
 					<p style ="font-size:25px" align="left">
-					For exmaple $\Omega = (-1,1)$, and consider $h > 0$.
-						We denote the points $x_i = -1 + (i-1)h$ for $i = 1, \cdots, N_h$
+					For example consider $\Omega = (-1,1)$, and $h > 0$.
+						We denote the points $x_i = -1 + (i-1)h$ for $i = 1, \cdots, N_h$.
 					We can write the basis for standard FEM for the Dirichlet problem as
 					\[
 						V_h^{\textup{FEM}} = \textrm{span} \{\varphi_2, \cdots, \varphi_{N_h-1}\}.
@@ -374,6 +386,7 @@
 					\[
 						V_h = \textrm{span} \{\delta^s \varphi_1, \cdots, \delta^s \varphi_{N_h}\}.
 					\]
+					Thus we have a <u> finite element method with a weighted basis</u>, for simplicity <b> <font color ="SlateBlue"> WFEM </font> </b>.
 				
 			
 					
@@ -614,7 +627,9 @@ fortunately for the finite element method, it often does.'' </em>
 
 				<section data-background-color="white">
 					<p style ="font-size:30px"> <b> <font color ="DeepSkyBlue"> Variational Crimes  </font> </b>  </p>
-					
+					<p style ="font-size:20px" align="left"> 
+					\[ a(\phi,\psi) = \frac{C_{d,s}}{2} \iint\limits_{\mathbb{R}^d \times \mathbb{R}^d} \frac{(\phi(x) -\phi(y))(\psi(x) - \psi(y))}{|x-y|^{d+2s}} \text{d}x \text{d}y \quad \]
+					</p>
 					<p style ="font-size:25px" align="left">
 				
 						<div style="background-color:rgb(235, 142, 36); padding: 1px;">
